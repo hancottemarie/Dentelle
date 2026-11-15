@@ -1,0 +1,140 @@
+{
+  "version": "1.0.0",
+  "stitches": [
+    {
+      "id": "cloth_stitch",
+      "name": "Point Toilé (Mat / Passée)",
+      "difficulty": 1,
+      "compatible_roles": ["contour", "fill"],
+      "grid_angles": [45, 60],
+      "min_pitch_mm": 2.0,
+      "density_factor": 1.0,
+      "description": "Tissage serré et opaque formant la structure principale et les motifs pleins.",
+      "cell_geometry": {
+        "pins": [
+          {"u": 0.0, "v": 0.0}
+        ],
+        "guide_lines": [
+          {"from": [0.0, 0.0], "to": [1.0, 0.0], "style": "solid"},
+          {"from": [0.0, 0.0], "to": [0.0, 1.0], "style": "solid"}
+        ]
+      }
+    },
+    {
+      "id": "half_stitch",
+      "name": "Point Grille (Demi-passée)",
+      "difficulty": 1,
+      "compatible_roles": ["fill", "contour"],
+      "grid_angles": [45, 60],
+      "min_pitch_mm": 2.2,
+      "density_factor": 0.85,
+      "description": "Remplissage léger et ajouré laissant passer la lumière avec des diagonales régulières.",
+      "cell_geometry": {
+        "pins": [
+          {"u": 0.0, "v": 0.0}
+        ],
+        "guide_lines": [
+          {"from": [0.0, 0.0], "to": [1.0, 1.0], "style": "dashed"}
+        ]
+      }
+    },
+    {
+      "id": "torchon_ground",
+      "name": "Fond Torchon (Fond Clair)",
+      "difficulty": 2,
+      "compatible_roles": ["background", "fill"],
+      "grid_angles": [45],
+      "min_pitch_mm": 2.5,
+      "density_factor": 0.7,
+      "description": "Réseau traditionnel à 45 degrés formant des losanges réguliers.",
+      "cell_geometry": {
+        "pins": [
+          {"u": 0.0, "v": 0.0}
+        ],
+        "guide_lines": [
+          {"from": [0.0, 0.0], "to": [1.0, 0.0], "style": "dotted"},
+          {"from": [0.0, 0.0], "to": [0.0, 1.0], "style": "dotted"}
+        ]
+      }
+    },
+    {
+      "id": "tally_leaf",
+      "name": "Point d'Esprit (Grain d'orge)",
+      "difficulty": 3,
+      "compatible_roles": ["fill", "background"],
+      "grid_angles": [45, 60],
+      "min_pitch_mm": 3.5,
+      "density_factor": 0.6,
+      "description": "Motif décoratif en forme de petit losange plein suspendu entre quatre épingles.",
+      "cell_geometry": {
+        "pins": [
+          {"u": 0.0, "v": 0.0},
+          {"u": 1.0, "v": 0.0},
+          {"u": 1.0, "v": 1.0},
+          {"u": 0.0, "v": 1.0}
+        ],
+        "guide_lines": [
+          {"from": [0.5, 0.0], "to": [1.0, 0.5], "style": "solid"},
+          {"from": [1.0, 0.5], "to": [0.5, 1.0], "style": "solid"},
+          {"from": [0.5, 1.0], "to": [0.0, 0.5], "style": "solid"},
+          {"from": [0.0, 0.5], "to": [0.5, 0.0], "style": "solid"}
+        ]
+      }
+    },
+    {
+      "id": "virgin_ground",
+      "name": "Fond Vierge (Cinq trous)",
+      "difficulty": 4,
+      "compatible_roles": ["background", "fill"],
+      "grid_angles": [45, 60],
+      "min_pitch_mm": 3.0,
+      "density_factor": 0.65,
+      "description": "Fond complexe alternant des groupes de quatre épingles serrées et des espaces ouverts.",
+      "cell_geometry": {
+        "pins": [
+          {"u": 0.0, "v": 0.0},
+          {"u": 0.5, "v": 0.0},
+          {"u": 0.0, "v": 0.5},
+          {"u": 0.5, "v": 0.5}
+        ],
+        "guide_lines": [
+          {"from": [0.0, 0.0], "to": [0.5, 0.5], "style": "solid"},
+          {"from": [0.5, 0.0], "to": [0.0, 0.5], "style": "solid"},
+          {"from": [0.5, 0.5], "to": [1.0, 1.0], "style": "dashed"}
+        ]
+      }
+    },
+    {
+      "id": "rose_ground",
+      "name": "Fond Rose (Flandre / Valenciennes)",
+      "difficulty": 5,
+      "compatible_roles": ["background", "fill"],
+      "grid_angles": [45, 60],
+      "min_pitch_mm": 3.5,
+      "density_factor": 0.75,
+      "description": "Réseau prestigieux formant de petites roses octogonales entourées de piquages.",
+      "cell_geometry": {
+        "pins": [
+          {"u": 0.25, "v": 0.0},
+          {"u": 0.75, "v": 0.0},
+          {"u": 1.0, "v": 0.25},
+          {"u": 1.0, "v": 0.75},
+          {"u": 0.75, "v": 1.0},
+          {"u": 0.25, "v": 1.0},
+          {"u": 0.0, "v": 0.75},
+          {"u": 0.0, "v": 0.25}
+        ],
+        "guide_lines": [
+          {"from": [0.25, 0.0], "to": [0.75, 0.0], "style": "solid"},
+          {"from": [0.75, 0.0], "to": [1.0, 0.25], "style": "solid"},
+          {"from": [1.0, 0.25], "to": [1.0, 0.75], "style": "solid"},
+          {"from": [1.0, 0.75], "to": [0.75, 1.0], "style": "solid"},
+          {"from": [0.75, 1.0], "to": [0.25, 1.0], "style": "solid"},
+          {"from": [0.25, 1.0], "to": [0.0, 0.75], "style": "solid"},
+          {"from": [0.0, 0.75], "to": [0.0, 0.25], "style": "solid"},
+          {"from": [0.0, 0.25], "to": [0.25, 0.0], "style": "solid"}
+        ]
+      }
+    }
+  ]
+}
