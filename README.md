@@ -53,4 +53,19 @@ bobbin-lace-generator/
 ## Point d'entrée API FastAPI (backend/app/main.py)
     Ce serveur expose tous les endpoints nécessaires à l'application : contrôle de santé, lecture du catalogue de points, import et segmentation d'image avec mise en cache en mémoire (pour que les déplacements de curseurs s'exécutent en moins de 150 ms sans re-segmenter l'image), et exports PDF/SVG.
 
+Initialisation et dépendances (frontend/package.json & vite.config.js)
+
+Créez le dossier frontend/ à la racine de votre dépôt Dentelle et ajoutez ces deux fichiers de configuration :
+Client HTTP vers FastAPI (frontend/src/api/laceApi.js)
+
+Ce service gère la communication avec les endpoints FastAPI (/api/stitches, /api/upload, /api/generate, /api/export/pdf et /api/export/svg).
+Catalogue des points maîtrisés (frontend/src/components/StitchCatalog.jsx)Affiche la liste interactive des points avec leur badge de difficulté ($1$ à $5$), l'angle compatible ($45^\circ / 60^\circ$) et le filtrage visuel en temps réel.
+
+
+Panneau de contrôle temps réel (frontend/src/components/ControlPanel.jsx)Regroupe tous les curseurs dynamiques (largeur globale en mm, pas de grille, angle $45^\circ/60^\circ$, niveau de difficulté, densité et ornements de bordure) ainsi que les boutons d'export PDF/SVG à l'échelle 1:1.
+
+Canvas vectoriel interactif (frontend/src/components/LaceCanvas.jsx)Utilise react-konva pour afficher le carton à haute vitesse ($60\text{ FPS}$), gérer le zoom à la molette, le déplacement (pan), l'affichage optionnel de l'image source en calque semi-transparent et le menu contextuel permettant de forcer un point spécifique au clic sur n'importe quelle zone.
+
+Assemblage principal avec debounce temps réel (frontend/src/App.jsx)Synchronise le panneau de contrôle, le sauvegarde automatique des points maîtrisés dans localStorage, le recalcul temps réel déporté sur FastAPI (avec debounce de $150\text{ ms}$) et le canvas Konva.
+
 
